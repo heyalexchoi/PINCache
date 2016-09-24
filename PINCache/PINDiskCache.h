@@ -232,6 +232,11 @@ typedef void (^PINDiskCacheObjectBlock)(PINDiskCache *cache, NSString *key, id <
 - (void)fileURLForKey:(nullable NSString *)key block:(nullable PINDiskCacheObjectBlock)block;
 
 /**
+ Synchronously returns the fileURL that should be used for a given key, regardless of whether an associated object is cached yet.e 
+ */
+- (NSURL *)encodedFileURLForKey:(NSString *)key;
+
+/**
  Stores an object in the cache for the specified key. This method returns immediately and executes the
  passed block as soon as the object has been stored.
  
